@@ -1,6 +1,11 @@
+*{
+    box-sizing: content-box;
+}
+
 .container{
     width: 800px;
     margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .body{
     font-family:Arial;
@@ -20,6 +25,8 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .profile img{
+    display: block;
+    margin: auto;
     width:150px;
     border-radius: 50%;
 }
@@ -34,6 +41,20 @@ li{
     margin:5px;
     padding:8px;
     border-radius: 5px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,td{
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background: #f2f2f2;
 }
 
 .form{
@@ -55,7 +76,16 @@ li{
     margin: 5px;
 }
 
+.check-content input{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
 button{
+    cursor: pointer;
+    transition: 0.3s;
     width: 95%;
     background: blue;
     color: white;
@@ -65,5 +95,5 @@ button{
 }
 
 button:hover{
-    background-color: darkblue;
+    background:#003366;
 }
