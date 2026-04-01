@@ -30,8 +30,8 @@
     width:150px;
     border-radius: 50%;
 }
-.skill{
-    transition: 10s;
+.hidden{
+    display: none;
 }
 
 ol{

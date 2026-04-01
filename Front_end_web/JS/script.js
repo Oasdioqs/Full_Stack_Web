@@ -9,14 +9,7 @@ let skillbtn=document.querySelector("#toggleskill");
 let skill=document.querySelector("#skill");
 
 skillbtn.addEventListener("click",function(){
-    if(skill.style.display=="none"){
-        skill.style.display="block";
-        skillbtn.innerText="Show Skill";
-    }
-    else{
-        skill.style.display="none";
-        skillbtn.innerText="Hide skill";
-    }
+    skill.classList.toggle("hidden");
 })
 btn.addEventListener("click",function(){
     bio.innerText="I will become Full Stack developer";

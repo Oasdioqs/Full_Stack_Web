@@ -1,0 +1,12 @@
+.done{
+    text-decoration: line-through;
+}
+
+span{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+span:hover{
+    color: blue;
+}
