@@ -1,0 +1,17 @@
+.done{
+    text-decoration: line-through;
+}
+li{
+    margin: 5 5px;
+}
+button{
+    margin:0 10px;
+}
+span{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+span:hover{
+    color: blue;
+}
