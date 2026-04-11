@@ -18,8 +18,3 @@ span:hover{
 .error{
     border:2px solid red;
 }
-
-mark{
-    background: yellow;
-    padding:2px;
-}

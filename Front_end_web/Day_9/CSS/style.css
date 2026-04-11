@@ -1,5 +1,10 @@
 .done{
     text-decoration: line-through;
+    opacity: 0.6;
+}
+.empty{
+    text-align: center;
+    opacity: 0.5;
 }
 li{
     margin: 5 5px;
@@ -10,6 +15,7 @@ button{
 span{
     cursor: pointer;
     transition: 0.3s;
+    margin-right:5px;
 }
 
 span:hover{
@@ -17,9 +23,4 @@ span:hover{
 }
 .error{
     border:2px solid red;
-}
-
-mark{
-    background: yellow;
-    padding:2px;
 }

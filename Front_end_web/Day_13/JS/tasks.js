@@ -1,11 +1,12 @@
-export function addTask(tasks,text){
-    if(!text) return tasks;
+export function addTask(tasks,text,priority="medium"){
+    if(!text || text.trim()==="") return tasks;
     return[
         ...tasks,
         {
             id:Date.now(),
             text:text,
             done:false,
+            priority:priority,
             createAt:new Date().toLocaleString()
         }
     ];

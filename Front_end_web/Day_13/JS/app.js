@@ -15,6 +15,8 @@ let input=document.querySelector("#taskInput");
 let btn=document.querySelector("#addBtn");
 let taskList=document.querySelector("#taskList");
 let searchInput=document.querySelector("#searchInput");
+let priority=document.querySelector("#priority");
+let priorityFilter="all";
 
 function debounce(func,delay){
     let timeout;
@@ -26,9 +28,24 @@ function debounce(func,delay){
         },delay);
     };
 }
-function updateUI(action,id,text){
+export function sortTasks(tasks){
+    const priorityOrder={
+        high:3,
+        medium:2,
+        low:1
+    };
+
+    return[...tasks].sort((a,b)=>{
+        if(a.done !== b.done){
+            return a.done-b.done;
+        }
+
+        return priorityOrder[b.priority]-priorityOrder[a.priority];
+    })
+}
+function updateUI(action,id,text,priority){
     if(action==="add"){
-        tasks=addTask(tasks,text);
+        tasks=addTask(tasks,text,priority);
     }
     else if(action==="delete"){
         tasks=deleteTask(tasks,id);
@@ -38,6 +55,9 @@ function updateUI(action,id,text){
     }
     else if(action==="edit"){
         tasks=editTask(tasks,id,text);
+    }
+    if(priorityFilter!=="all"){
+        filteredTasks=filteredTasks.filter(t=>t.priority===priorityFilter);
     }
     saveTask(tasks);
     renderTasks(tasks,taskList,updateUI,searchQuery);
@@ -49,10 +69,14 @@ searchInput.addEventListener("input",debounce(function(e){
 },300)
 );
 
+document.querySelector("#filterHigh").onclick=()=>{
+    priorityFilter="high";
+    renderTasks(tasks,taskList,updateUI,searchQuery);
+}
 btn.onclick=function(){
     if(input.value==="")return;
 
-    updateUI("add",null,input.value);
+    updateUI("add",null,input.value,priority.value);
     input.value="";
 };
 
